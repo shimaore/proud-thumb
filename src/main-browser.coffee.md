@@ -19,9 +19,11 @@ Browser main
     db = new pouchdb db_path
     ###
 
-    page '/', ->
+    page '/index.html', ->
       ($ '#content').html teacup.render ->
         div 'Hello world'
 
-    page.base window.location.pathname
+    page_dir = window.location.pathname.split '/'
+    page_base = dir[0..dir.length-2].join '/'
+    page.base page_base
     page()
