@@ -24,6 +24,6 @@ Browser main
         div 'Hello world'
 
     page_dir = window.location.pathname.split '/'
-    page_base = dir[0..dir.length-2].join '/'
+    page_base = page_dir[0..page_dir.length-2].join '/'
     page.base page_base
     page()
