@@ -20,7 +20,8 @@ Browser main
     ###
 
     page '/', ->
-      ($ 'body').html teacup.render ->
+      ($ '#content').html teacup.render ->
         div 'Hello world'
 
+    page.base window.location.pathname
     page()
