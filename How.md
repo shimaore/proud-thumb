@@ -5,8 +5,9 @@ Typically:
     git clone https://github.com/shimaore/grunt-base.git my-project
     cd my-project
 
+    # create local/config.json for application configuration
+    # create local/install.json with {db} for Couchapp installation
+    # edit src/browser.coffee.md
+    # edit src/couchapp.coffee.md
     # edit package.json
-    # edit Gruntfile-couchapp.coffee for CouchDB location
-    # edit src/main-browser.coffee.md
-    # edit src/main-couchapp.coffee.md
     # npm install to build & install

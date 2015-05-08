@@ -2,7 +2,4 @@ node_modules/
 components/
 bower_components/
 dist/
-src/attachments/*.js
-src/attachments/*.html
-src/attachments/*.css
-src/main-couchapp.js
+local/

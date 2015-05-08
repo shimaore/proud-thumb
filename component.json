@@ -1,5 +1,0 @@
-{
-  "development": {
-    "component/dom": "*"
-  }
-}

@@ -7,15 +7,11 @@ module.exports = (grunt) ->
   config =
     pkg: pkg
 
-    shell:
-      component:
-        command: 'component install -d && component build -d -o dist -n component'
-
     browserify: {}
 
     clean:
       dist: ['lib/', 'dist/']
-      modules: ['node_modules/', 'bower_components/', 'components/']
+      modules: ['node_modules/']
       test: ['test/*.js','test/*.html']
 
     uglify: {}
@@ -35,7 +31,6 @@ module.exports = (grunt) ->
     (require "./Gruntfile-#{build}").config config
 
   grunt.initConfig config
-  grunt.loadNpmTasks 'grunt-shell'
   grunt.loadNpmTasks 'grunt-browserify'
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
