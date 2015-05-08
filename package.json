@@ -9,9 +9,7 @@
   "description": "",
   "scripts": {
     "pretest": "npm install",
-    "prepublish": "./node_modules/.bin/grunt build:browser",
-    "publish": "./node_modules/.bin/grunt build:couchapp",
-    "test": "curl -X PUT http://127.0.0.1:5984/tools; ./node_modules/.bin/grunt build:couchapp"
+    "test": "curl -X PUT http://127.0.0.1:5984/tools; ./node_modules/.bin/grunt default"
   },
   "author": "Stéphane Alnet <stephane@shimaore.net> (http://shimaore.net/)",
   "devDependencies": {
