@@ -4,7 +4,7 @@ This is ran through browserify, feel free to require()!
     pkg = require '../package.json'
 
     ddoc =
-      _id: "_design/#{pkg.name}"
+      _id: "#{pkg.name}"
       version: pkg.version
       views: {}
       validate_doc_update: (newDoc,oldDoc,userCtx) ->
