@@ -91,7 +91,7 @@ Start `spicy-action` handshake.
       {div,text} = teacup
       div ->
         text "#{host}: "
-        switch state
+        switch status
           when 'invalid'
             text "invalid access from #{ip}"
           when 'registrant_failure'
