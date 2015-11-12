@@ -86,19 +86,27 @@ Start `spicy-action` handshake.
           when 'end'
             text ", finished, progress #{data.progress/1000}, answer: #{data.answer/1000}, billable: #{data.billable/1000}, duration: #{data.duration/1000}."
 
+    template_ops = teacup.renderable (data) ->
+      {type,host,ip,status,message} = data
+      {div,text} = teacup
+      div ->
+        text "#{host}: "
+        switch state
+          when 'invalid'
+            text "invalid access from #{ip}"
+          when 'registrant_failure'
+            text "registrant failure from #{ip} (#{status}): "
+            div message
+          else
+            text JSON.stringify data
+
     socket.on 'call', (data)->
       console.log arguments
       content = template data
       $('div#content').prepend content
-    socket.on 'report', ->
-      console.log arguments
-    socket.on 'statistics:add', ->
-      console.log arguments
-    socket.on 'trace_started', ->
-      console.log arguments
-    socket.on 'trace_completed', ->
-      console.log arguments
-    socket.on 'trace_error', ->
+    socket.on 'ops', ->
+      content = template_ops data
+      $('div#content').prepend content
       console.log arguments
 
     zappa =
