@@ -104,7 +104,7 @@ Start `spicy-action` handshake.
       console.log arguments
       content = template data
       $('div#content').prepend content
-    socket.on 'ops', ->
+    socket.on 'ops', (data) ->
       content = template_ops data
       $('div#content').prepend content
       console.log arguments

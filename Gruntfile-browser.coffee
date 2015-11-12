@@ -24,7 +24,7 @@
 
   fs = require 'fs'
   grunt.registerTask 'build:html', 'Build HTML.', ->
-    html = require 'src/index.coffee'
+    html = require './src/index.coffee'
     fs.writeFileSync 'dist/attachments/index.html', html
 
   grunt.registerTask 'build:browser-production', 'clean:browser browserify:browser uglify:browser build:html'.split ' '
