@@ -117,10 +117,7 @@ Start `spicy-action` handshake.
         .then ({body:{key}}) ->
           new Promise (resolve,reject) ->
             try
-              socket.emit '__zappa_key', {key}, (ack) ->
-                if ack is true
-                  resolve()
-                else
-                  reject new Error ack.error
+              socket.emit '__zappa_key', {key}, ({key}) ->
+                resolve key
             catch error
               reject error
