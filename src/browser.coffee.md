@@ -63,7 +63,7 @@ Ampersand
 
 Start `spicy-action` handshake.
 
-        socket.emit 'join'
+        socket.emit 'join', 'calls'
 
     socket.on 'ready', ({roles}) ->
       console.log 'ready'
