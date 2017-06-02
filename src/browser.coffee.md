@@ -72,7 +72,7 @@ Start `spicy-action` handshake.
       console.log 'failed'
       console.log msg
 
-    template = teacup.renderable ({host,data:{state,source,destination,data}}) ->
+    template = teacup.renderable ({host,state,source,destination,data}) ->
       {div,text} = teacup
       div ->
         text "#{host}: Call from #{source} to #{destination}"
@@ -101,10 +101,11 @@ Start `spicy-action` handshake.
             text JSON.stringify data
 
     socket.on 'call', (data)->
-      console.log arguments
+      # console.log 'call', data
       content = template data
       $('div#content').prepend content
     socket.on 'ops', (data) ->
+      # console.log 'ops', data
       content = template_ops data
       $('div#content').prepend content
       console.log arguments
